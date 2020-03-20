@@ -1,0 +1,12 @@
+concepts
+http://appwarp.shephertz.com/game-development-center/java-multiplayer-libgdx-tutorial/
+https://stackoverflow.com/questions/5938530/making-a-multi-player-game-playable-over-a-network-or-on-the-internet/5943206
+https://www.tutorialspoint.com/java/java_networking.htm
+
+intro code tutorial
+https://www.javaworld.com/article/2853780/socket-programming-for-scalable-systems.html
+
+video tutorials
+tic tac toe
+tomravage
+arcxes games (might be slower, 30 mins just to set up thing)
