@@ -9,6 +9,8 @@ import java.awt.Graphics;
 import java.awt.BasicStroke;
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseAdapter;
 
 import java.io.File;
 import java.io.IOException;
@@ -21,7 +23,11 @@ public class GameWindow extends JPanel {
 	public static final String LION_PATH = RES_PATH + "/lion.jpg";
 	public static final int LINE_WIDTH = 10;
 
-	public GameWindow(){
+	private Game game;
+
+	public GameWindow(Game game){
+		this.game = game;
+		addMouseListener(new Input());
 	}
 
 	@Override
@@ -62,6 +68,16 @@ public class GameWindow extends JPanel {
 		g2D.drawImage(lion, Game.WIDTH / 3 + LINE_WIDTH / 2, Game.HEIGHT / 3 + LINE_WIDTH / 2,
 			      Game.WIDTH / 3 - LINE_WIDTH, Game.HEIGHT / 3 - LINE_WIDTH, null);
 
+				
+	}
+
+	class Input extends MouseAdapter {
+		@Override
+		public void mousePressed(MouseEvent e) {
+			if (e.getButton() == MouseEvent.BUTTON1){
+				game.inputReceived((3 * e.getX() / Game.WIDTH), (3 * e.getY() / Game.HEIGHT));
+			}
+		}
 				
 	}
 }
